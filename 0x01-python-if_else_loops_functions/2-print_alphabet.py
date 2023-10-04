@@ -1,5 +1,4 @@
 #!/usr/bin/python3
 
-n = 97
-for i in range(26):
-    print(chr(n+i), end="")
+for i in range(97, 97 + 26):
+    print(chr(i), end="")

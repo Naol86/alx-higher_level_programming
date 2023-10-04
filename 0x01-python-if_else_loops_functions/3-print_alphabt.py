@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 
-n = 97
-for i in range(26):
-    if i == 4 or i == 16:
+for i in range(97, 97 + 26):
+    if i == 101 or i == 113:
         continue
-    print(chr(n+i), end="")
+    print(chr(i), end="")
