@@ -5,4 +5,4 @@ for i in range(1, 100):
         print("{:02}".format(i), end='')
         if i < 89:
             print(", ", end='')
-print(' ')
+print('')
