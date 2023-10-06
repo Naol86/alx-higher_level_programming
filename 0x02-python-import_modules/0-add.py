@@ -2,5 +2,5 @@
 __import__ add_0
 a = 1
 b = 2
-print("{}".format(add_0(a,b)))
+print("{}".format(add_0.add(a,b)))
 
