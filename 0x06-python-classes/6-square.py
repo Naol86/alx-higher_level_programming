@@ -56,8 +56,8 @@ class Square:
             for i in range(p2):
                 print()
             for i in range(self.__size):
-                for l in range(p1):
-                    print('_',end='')
+                for h in range(p1):
+                    print('_', end='')
                 for j in range(self.__size):
                     print("#", end='')
                 print()
