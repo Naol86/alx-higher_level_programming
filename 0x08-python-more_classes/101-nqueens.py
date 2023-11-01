@@ -46,8 +46,7 @@ def sol(n):
             if not ans[i][j]:
                 row = j // n
                 col = j % n
-                temp.append((row, col))
-        temp = [temp]
+                temp.append([row, col])
         print(temp)
 
 
