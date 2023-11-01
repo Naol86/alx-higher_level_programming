@@ -39,7 +39,6 @@ def start(n):
 
 def sol(n):
     ans = start(n)
-    print(ans)
     for i in range(len(ans)):
         temp = []
         for j in range(len(ans[i])):
