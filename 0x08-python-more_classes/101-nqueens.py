@@ -47,6 +47,7 @@ def sol(n):
                 row = j // n
                 col = j % n
                 temp.append((row, col))
+        temp = [temp]
         print(temp)
 
 
