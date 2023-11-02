@@ -1,8 +1,11 @@
 #!/usr/bin/python3
-"""say my name"""
+"""
+to call your name
+"""
 
 
 def say_my_name(first_name, last_name=""):
+    """my name is my first name and last name"""
     if not isinstance(first_name, str):
         raise TypeError("first_name must be a string")
     if not isinstance(last_name, str):

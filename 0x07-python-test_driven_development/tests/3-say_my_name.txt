@@ -4,34 +4,37 @@ The ``3-say_my_name`` module
 Using ``say_my_name``
 -------------------
 
-Checking with first and last name:
+Importing the function from the module:
+	>>> say_my_name = __import__("3-say_my_name").say_my_name
+
+Checking first_name str with last_name str:
 	 >>> say_my_name("naol", "kasinet")
 	 My name is naol kasinet
 
-Checking with first_name string and last_name int:
+Checking first_name str with empty last_name:
+ 	 >>> say_my_name("naol")
+ 	 My name is naol 
+
+Checking first_name str with last_name int:
 	 >>> say_my_name("naol", 12)
-	 Traceback(most recent call last):
+	 Traceback (most recent call last):
 	 ...
 	 TypeError: last_name must be a string
 
-Checking with first_name int and last_name string:
-	 >>> say_my_name(12, "kasinet")
-	 Traceback(most recent call last):
-	 ...
-	 TypeError: first_name must be a string
+ Checking first_name int with last_name string:
+ 	 >>> say_my_name(12, "kasinet")
+ 	 Traceback (most recent call last):
+ 	 ...
+ 	 TypeError: first_name must be a string
 
-Checking with both int:
-	 >>> say_my_name(12, 12)
-	 Traceback(most recent call last):
-	 ...
-	 TypeError: first_name must be a string
+ Checking with both int:
+ 	 >>> say_my_name(12, 12)
+ 	 Traceback (most recent call last):
+ 	 ...
+ 	 TypeError: first_name must be a string
 
-Checking with first_name and last_name empty:
-	 >>> say_my_name("naol")
-	 naol 
-
-Checking with first_name int and last_name empty:
-	 >>> say_my_name(12)
-	 Traceback(most recent call last)
-	 ...
-	 TypeError: first_name must be a string
+ Checking with first_name int and last_name empty:
+ 	 >>> say_my_name(12)
+ 	 Traceback (most recent call last):
+ 	 ...
+ 	 TypeError: first_name must be a string
