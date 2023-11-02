@@ -30,5 +30,5 @@ Checking negative with positive:
 	 2
 
 Checking negative with negative:
-	 >>> add_integer(-1,-1)
+	 >>> add_integer(-1, -1)
 	 -2
