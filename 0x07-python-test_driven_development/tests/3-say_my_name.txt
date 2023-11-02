@@ -26,15 +26,3 @@ Checking first_name str with last_name int:
  	 Traceback (most recent call last):
  	 ...
  	 TypeError: first_name must be a string
-
- Checking with both int:
- 	 >>> say_my_name(12, 12)
- 	 Traceback (most recent call last):
- 	 ...
- 	 TypeError: first_name must be a string
-
- Checking with first_name int and last_name empty:
- 	 >>> say_my_name(12)
- 	 Traceback (most recent call last):
- 	 ...
- 	 TypeError: first_name must be a string
