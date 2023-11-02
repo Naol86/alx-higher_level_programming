@@ -28,3 +28,7 @@ Checking positive with negative:
 Checking negative with positive:
 	 >>> add_integer(-6, 8)
 	 2
+
+Checking negative with negative:
+	 >>> add_integer(-1,-1)
+	 -2
