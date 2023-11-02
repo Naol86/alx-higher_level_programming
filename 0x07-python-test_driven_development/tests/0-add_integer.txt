@@ -35,3 +35,14 @@ Checking non-number with number:
 	 ...
 	 TypeError: a must be an integer
 
+Checking number with non-number:
+	 >>> add_integer(12, "a")
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: b must be an integer
+
+Checking non-number with non-number:
+	 >>> add_integer("a", "12")
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: a must be an integer
