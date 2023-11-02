@@ -7,6 +7,16 @@ Using ``say_my_name``
 Importing the function from the module:
 	>>> say_my_name = __import__("3-say_my_name").say_my_name
 
+Checking for module docstring:
+	 >>> m = __import__("3-say_my_name").__doc__
+	 >>> len(m) > 1
+	 True
+
+Checking for function docstring:
+	 >>> f = __import__("3-say_my_name").add_integer.__doc__
+	 >>> len(f) > 1
+	 True
+
 Checking first_name str with last_name str:
 	 >>> say_my_name("naol", "kasinet")
 	 My name is naol kasinet
@@ -23,6 +33,18 @@ Checking first_name str with last_name int:
 
  Checking first_name int with last_name string:
  	 >>> say_my_name(12, "kasinet")
+ 	 Traceback (most recent call last):
+ 	 ...
+ 	 TypeError: first_name must be a string
+
+ Checking with both int:
+ 	 >>> say_my_name(12, 12)
+ 	 Traceback (most recent call last):
+ 	 ...
+ 	 TypeError: first_name must be a string
+
+ Checking with first_name int and last_name empty:
+ 	 >>> say_my_name(12)
  	 Traceback (most recent call last):
  	 ...
  	 TypeError: first_name must be a string
