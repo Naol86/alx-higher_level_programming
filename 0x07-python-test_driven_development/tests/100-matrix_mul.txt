@@ -1,0 +1,42 @@
+The ``100-matrix_mul`` module
+==========================
+
+Using ``matrix_mul``
+--------------------
+
+Importing the function:
+	 >>> matrix_mul = __import__("100-matrix_mul").matrix_mul
+
+Checking for module docstring:
+	 >>> m = __import__("100-matrix_mul").__doc__
+	 >>> len(m) > 1
+	 True
+
+Checking for function docstring:
+	 >>> f = __import__("100-matrix_mul").matrix_mul.__doc__
+	 >>> len(f) > 1
+	 True
+
+Checking with m_a int and m_b list of lists:
+	 >>> matrix_mul(12, [[1, 3], [4, 5]])
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: m_a must be a list
+
+Checking with m_a list of lists and m_b string:
+	 >>> matrix_mul([[1, 2], [3, 4]], "naol")
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: m_b must be a list
+
+Checking with m_a empty list and m_b list of lists:
+	 >>> matrix_mul([], [[1, 2], [3, 4]])
+	 Traceback (most recent call last):
+	 ...
+	 ValueError: m_a can't be empty
+
+Checking with m_a list and m_b list:
+	 >>> matrix_mul([1, 2], [4, 5])
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: m_a must be a list of lists
