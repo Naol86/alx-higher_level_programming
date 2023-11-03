@@ -89,6 +89,12 @@ Checking with m_a list of lists with string and m_b with list of lists of int:
 	 ...
 	 TypeError: m_a should contain only integers or floats
 
+Checking with m_b with list of lists of string:
+	 >>> matrix_mul([[1, 2], [3, 4]], [["a", "b"], ["c", "d"]])
+	 Traceback (most recent call last):
+	 ...
+	 TypeError: m_b should contain only integers or floats
+
 Checking with m_a list of lists contain int and m_b list of lists contain string:
 	 >>> matrix_mul([[1, 2], [3, 4]],[["naol","kainet"]])
 	 Traceback (most recent call last):
