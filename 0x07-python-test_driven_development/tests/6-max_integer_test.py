@@ -30,5 +30,13 @@ class TestMaxInteger(unittest.TestCase):
         with self.assertRaises(TypeError):
             max_integer(lis)
 
+    def test_None_list(self):
+        with self.assertRaises(TypeError):
+            max_integer(None)
+
+    def test_invalid_input(self):
+        with self.assertRaises(TypeError):
+            max_integer(12)
+
 if __name__ == "__main__":
     unittest.main()
