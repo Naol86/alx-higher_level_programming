@@ -8,7 +8,8 @@ class BaseGeometry():
 
     Methods:
         area(): Raises an exception indicating that it is not implemented.
-        integer_validator(name, value): Validates if a given value is an integer and if it is greater than zero.
+        integer_validator(name, value): Validates if a
+        given value is an integer and if it is greater than zero.
 
     """
 
@@ -21,7 +22,8 @@ class BaseGeometry():
 
     def integer_validator(self, name, value):
         """
-        Validates if a given value is an integer and if it is greater than zero.
+        Validates if a given value is an
+        integer and if it is greater than zero.
 
         Args:
             name (str): The name of the value being validated.
