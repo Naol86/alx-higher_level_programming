@@ -8,12 +8,34 @@ class BaseGeometry():
 
     Methods:
         area(): Raises an exception indicating that it is not implemented.
-        integer_validator(name, value): Validates if a given value is an integer and if it is greater than zero.
+        integer_validator(name, value):
+        Validates if a given value is an integer and
+        if it is greater than zero.
 
     """
 
     def __init__(self, width, height):
-        
+        """
+        Initializes a BaseGeometry object with the
+        given width and height values.
+
+        Args:
+            width (int): The width of the geometry object.
+            height (int): The height of the geometry object.
+
+        Returns:
+            None
+
+        Raises:
+            ValueError: If the width or height is not a positive integer.
+        """
+
+        self.__height = height
+        self.integer_validator("width", width)
+        self.__width = width
+        self.integer_validator("height", height)
+        self.__height = height
+
     def area(self):
         """
         Raises:
@@ -23,7 +45,8 @@ class BaseGeometry():
 
     def integer_validator(self, name, value):
         """
-        Validates if a given value is an integer and if it is greater than zero.
+        Validates if a given value is an
+        integer and if it is greater than zero.
 
         Args:
             name (str): The name of the value being validated.
@@ -37,4 +60,3 @@ class BaseGeometry():
             raise TypeError("{} must be an integer".format(name))
         elif value <= 0:
             raise ValueError("{} must be greater than 0".format(name))
-
