@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-
+""" this is checking class and obj
+"""
 
 def is_same_class(obj, a_class):
     """
