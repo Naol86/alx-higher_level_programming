@@ -39,12 +39,48 @@ class Base:
 
     @staticmethod
     def to_json_string(list_dictionaries):
+        """
+        Convert a list of dictionaries into a JSON string.
+
+        Args:
+            list_dictionaries (list): A list of dictionaries to be
+            converted into a JSON string.
+
+        Returns:
+            str: A JSON string representing the input list of dictionaries.
+
+        Example:
+            >>> list_dicts = [{'id': 1, 'name': 'John'},
+            {'id': 2, 'name': 'Jane'}]
+            >>> result = Base.to_json_string(list_dicts)
+            >>> print(result)
+            '[{"id": 1, "name": "John"}, {"id": 2, "name": "Jane"}]'
+        """
         if len(list_dictionaries) == 0 or list_dictionaries is None:
             return []
         return json.dumps(list_dictionaries)
 
     @classmethod
     def save_to_file(cls, list_objs):
+        """
+        Saves a list of objects to a JSON file.
+
+        Args:
+            list_objs (list): A list of objects to be saved to the JSON file.
+
+        Returns:
+            None
+
+        Raises:
+            None
+
+        Example Usage:
+            # Create a list of objects
+            objs = [obj1, obj2, obj3]
+
+            # Call the save_to_file method
+            Base.save_to_file(objs)
+        """
         file_name = cls.__name__ + ".json"
         with open(file_name, 'w') as file:
             if list_objs is None:
@@ -55,18 +91,44 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
+        """
+        Convert a JSON string into a list of dictionaries.
+
+        Args:
+            json_string (str): A JSON str representing a list of dictionaries.
+
+        Returns:
+            list: A list of dictionaries representing the parsed JSON string.
+
+        Example:
+            json_str = '[{"id": 1, "name": "John"}, {"id": 2, "name": "Jane"}]'
+            result = Base.from_json_string(json_string)
+            print(result)
+            # Output: [{'id': 1, 'name': 'John'}, {'id': 2, 'name': 'Jane'}]
+        """
         if json_string is None:
             return []
         return json.loads(json_string)
 
     @classmethod
     def create(cls, **dictionary):
+        """
+        Create a new instance of the class based on a dictionary of attributes.
+
+        Args:
+            **dictionary: A dictionary containing the attributes and their
+            values for the new instance of the class.
+
+        Returns:
+            The newly created instance of the class with the attributes set
+            according to the values in the dictionary.
+        """
         if dictionary and dictionary != {}:
             if cls.__name__ == "Rectangle":
-                new = cls(1, 1) # type: ignore
+                new = cls(1, 1)
             else:
                 new = cls(1)
-            new.update(**dictionary) # type: ignore
+            new.update(**dictionary)
             return new
 
     @classmethod
