@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-
-from attr import validate
+"""this is a rectangle class"""
 from models.base import Base
 
 
@@ -140,6 +139,31 @@ class Rectangle(Base):
         return self.__height * self.__width
 
     def display(self):
+        """
+        Prints a visual representation of the rectangle
+        shape using the '#' character.
+
+        Example Usage:
+        rect = Rectangle(5, 3, 2, 1)
+        rect.display()
+        Output:
+            #####
+            #####
+            #####
+
+        Inputs: None
+
+        Flow:
+        1. Prints a number of empty lines equal to the
+            y-coordinate of the rectangle.
+        2. For each row of the rectangle (height), it prints
+            a number of spaces equal to the x-coordinate of the rectangle.
+        3. Within each row, it prints a number of '#' characters
+            equal to the width of the rectangle.
+        4. After printing each row, it moves to the next line.
+
+        Outputs: None
+        """
         for k in range(self.__y):
             print()
         for i in range(self.__height):
@@ -149,6 +173,28 @@ class Rectangle(Base):
             print()
 
     def update(self, *args, **kwargs):
+        """
+        Update the attributes of a rectangle object.
+
+        Args:
+            *args: Positional arguments. The first argument is
+            the id of the rectangle, followed by the width, height, x,
+            and y values in that order.
+            **kwargs: Keyword arguments. The attributes to be updated
+            can be passed as keyword arguments. The available attributes
+            are width, height, x, y, and id.
+
+        Returns:
+            None
+
+        Example Usage:
+            rect = Rectangle(5, 3, 2, 1)
+            rect.update(10, 7, x=4, y=2)
+            print(rect.width)  # Output: 10
+            print(rect.height)  # Output: 7
+            print(rect.x)  # Output: 4
+            print(rect.y)  # Output: 2
+        """
         if len(args) == 0:
             for i in kwargs:
                 if i == "width":
@@ -173,6 +219,7 @@ class Rectangle(Base):
             self.__y = args[4]
 
     def to_dictionary(self):
+        """return a dict of rectangle"""
         tem = {'id': self.id, 'width': self.__width,
                'height': self.__height, 'x': self.__x, 'y': self.__y}
         return tem
