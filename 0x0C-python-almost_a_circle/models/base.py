@@ -84,7 +84,7 @@ class Base:
         file_name = str(cls.__name__) + ".json"
         with open(file_name, 'w') as file:
             if list_objs is None or list_objs == []:
-                json.dump("[]", file)
+                file.write("[]")
             else:
                 list_dicts = [o.to_dictionary() for o in list_objs]
                 file.write(Base.to_json_string(list_dicts))
