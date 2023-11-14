@@ -81,10 +81,10 @@ class Base:
             # Call the save_to_file method
             Base.save_to_file(objs)
         """
-        file_name = cls.__name__ + ".json"
+        file_name = str(cls.__name__) + ".json"
         with open(file_name, 'w') as file:
             if list_objs is None:
-                json.dump([], file)
+                json.dump("[]", file)
             else:
                 list_dicts = [o.to_dictionary() for o in list_objs]
                 json.dump(list_dicts, file)
