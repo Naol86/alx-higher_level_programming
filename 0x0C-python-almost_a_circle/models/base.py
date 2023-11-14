@@ -56,8 +56,8 @@ class Base:
             >>> print(result)
             '[{"id": 1, "name": "John"}, {"id": 2, "name": "Jane"}]'
         """
-        if len(list_dictionaries) == 0 or list_dictionaries is None:
-            return []
+        if list_dictionaries == [] or list_dictionaries is None:
+            return "[]"
         return json.dumps(list_dictionaries)
 
     @classmethod
