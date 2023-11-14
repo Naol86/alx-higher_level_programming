@@ -39,10 +39,41 @@ class Rectangle(Base):
         super().__init__(id)
 
     def __str__(self):
+        """
+        Returns a string representation of the Rectangle object.
+
+        The string representation includes the id, x-coordinate,
+        y-coordinate, width, and height of the rectangle.
+
+        Returns:
+            A string representation of the Rectangle object in the
+            format "[Rectangle] (id) x/y - width/height".
+        """
         return ("[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.__x,
                 self.__y, self.__width, self.__height))
 
     def validator(self, name, value):
+        """
+        Validate the values of the attributes in the Rectangle class.
+
+        Args:
+            name (str): The name of the attribute to be validated.
+            value (int): The value of the attribute to be validated.
+
+        Returns:
+            bool: True if the attribute value is valid.
+
+        Raises:
+            TypeError: If the attribute value is not an integer.
+            ValueError: If the attribute value does not meet
+            the specified conditions.
+
+        Example Usage:
+            rect = Rectangle(5, 3, 2, 1)
+            rect.validator("width", 5)  # No error
+            rect.validator("width", "abc")  # Raises TypeError
+            rect.validator("width", -5)  # Raises ValueError
+        """
         if not isinstance(value, int):
             raise TypeError("{} must be an integer".format(name))
         if value <= 0 and (name == 'width' or name == 'height'):
