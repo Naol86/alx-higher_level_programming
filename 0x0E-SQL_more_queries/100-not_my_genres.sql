@@ -1,5 +1,5 @@
 -- this is selecting a tv genres that not have the same show with Dexter
-SELECT tv_genres.`name` from tv_genres 
+SELECT tv_genres.`name` FROM tv_genres 
 WHERE tv_genres.id NOT IN
 (SELECT tv_genres.id FROM tv_genres
 INNER JOIN tv_show_genres
