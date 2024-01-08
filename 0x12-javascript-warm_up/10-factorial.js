@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-function Factorial(x) {
+function Factorial (x) {
   if (x === 0 || isNaN(x)) {
     return 1;
   }
