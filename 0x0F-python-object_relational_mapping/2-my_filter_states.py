@@ -12,5 +12,7 @@ if __name__ == '__main__':
     db = MySQLdb.connect(user=argv[1], password=argv[2], db=argv[3])
     temp = db.cursor()
     temp.execute(f"SELECT * FROM `states` WHERE `name` = \"{argv[4]}\"")
-    for i in temp:
-        print(i)
+    states = temp.fetchall()
+    for state in states:
+        print(state)
+

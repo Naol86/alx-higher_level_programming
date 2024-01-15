@@ -14,6 +14,7 @@ if __name__ == '__main__':
     argv = sys.argv
     db = MySQLdb.connect(user=argv[1], password=argv[2], db=argv[3])
     temp = db.cursor()
-    temp.execute("SELECT * FROM `states` WHERE `name` like \'N%\'")
+    temp.execute("SELECT * FROM `states`")
     for i in temp:
-        print(i)
+        if i[1][0] == 'N':
+            print(i)
