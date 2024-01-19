@@ -1,2 +1,1 @@
-this is a python project to connect it with database using sqlalchemy
-
+this is python and database

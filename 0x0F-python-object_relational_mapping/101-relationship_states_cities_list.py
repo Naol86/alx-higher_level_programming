@@ -1,14 +1,12 @@
 #!/usr/bin/python3
 """
-Prints the first State object from the database hbtn_0e_6_usa.
-Usage: ./8-model_state_fetch_first.py <mysql username> /
-                                      <mysql password> /
-                                      <database name>
+Lists all States and corresponding Cities in the database hbtn_0e_101_usa.
 """
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model_state import State
+from relationship_state import State
+from relationship_city import City
 
 if __name__ == "__main__":
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
@@ -17,8 +15,7 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state = session.query(State).order_by(State.id).first()
-    if state is None:
-        print("Nothing")
-    else:
+    for state in session.query(State).order_by(State.id):
         print("{}: {}".format(state.id, state.name))
+        for city in state.cities:
+            print("    {}: {}".format(city.id, city.name))
