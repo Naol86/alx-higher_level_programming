@@ -2,6 +2,7 @@
 
 """
     check if user input is exist in our database
+    but with out check it it can destroy out db
 """
 
 import sys

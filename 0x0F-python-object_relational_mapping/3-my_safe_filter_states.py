@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+    check if user input is exist in our database
+    but check if it can destroy out db
+"""
 
 import sys
 import MySQLdb
